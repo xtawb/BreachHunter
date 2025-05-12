@@ -1,77 +1,111 @@
 <p align="center">
-  <img src="BreachHunter-icon.png" alt="BreachHunter Logo" width="150">
+  <img src="Images/BreachHunter-icon.png" alt="BreachHunter Logo" width="150">
 </p>
 
 <h2 align="center">ＢｒｅａｃｈＨｕｎｔｅｒ</h2>
 
 <p align="center">
-  <b>A password cracking tool using John the Ripper with a CSV database and a wordlist.</b>
+  <b>A modern and modular password cracking tool using John the Ripper with CSV database support.</b>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="Python Version">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
-  <img src="https://img.shields.io/badge/Version-1.0.0-red" alt="Version">
+  <img src="https://img.shields.io/badge/Version-2.0.0-red" alt="Version">
   <img src="https://img.shields.io/github/issues-closed/xtawb/BreachHunter">
 </p>
 
-# 🔐 Password Cracking Tool using John the Ripper
+# 🔐 BreachHunter - Advanced Password Cracking Tool
 
-This tool is designed to crack bcrypt hashed passwords from a CSV database using John the Ripper and a provided wordlist.
-
-## 📝 Features
-- Extracts bcrypt hashes (`$2y$` format) from a CSV file.
-- Uses John the Ripper to crack passwords with a provided wordlist.
-- Displays cracked passwords along with user details.
-- Saves results to a CSV file for further analysis.
-
-## ⚙️ Prerequisites
-- Python 3.x
-- John the Ripper installed on your system
-- A CSV file containing username and password hashes
-- A password wordlist file
-
-## 📂 CSV File Format
-The CSV file should include at least the following columns:
-- `username`
-- `password` (bcrypt hashed, starting with `$2y$`)
-- `name` (optional, for display purposes)
-
-Example CSV structure:
-```csv
-username,password,name
-user1,$2y$10$N9qo8uLOickgx2ZMRZoMy...,John Doe
-user2,$2y$10$ZAMMv.xKtYlLv6sUX.d2P...,Jane Smith
-```
-
-## 🚀 Usage
-1. Clone or download the script `breachHunter.py`.
-2. Ensure John the Ripper is installed and accessible in your system PATH.
-   ```bash
-   cd BreachHunter
-   ```
-3. Run the script:
-   ```bash
-   python3 breachHunter.py
-   ```
-4. Follow the prompts to provide:
-   - Path to your CSV database file
-   - Path to your password wordlist file
-
-<p align="center">
-  <img src="BreachHunter-working.png" alt="🔗 Terminal Output-1 Image">
-</p>
-
-## 📊 Output
-- The tool will display cracked passwords in the console.
-- Results will be saved to `cracked_passwords.csv` in the same directory.
-
-## ⚠️ Legal Disclaimer
-This tool is intended for **educational purposes** and **authorized security testing only**. Unauthorized use to crack passwords without explicit permission is illegal and unethical. The developer assumes no liability for misuse of this tool.
-
-## 📄 License
-This project is open-source and available under the MIT License.
+BreachHunter is a flexible password cracking tool powered by John the Ripper. It extracts password hashes from CSV files and attempts to crack them using a provided wordlist. Designed with extensibility and clarity in mind, this tool is ideal for security assessments, CTFs, and forensic analysis.
 
 ---
 
-For questions or issues, please open an issue in the repository.
+## 🆕 New in v2.0.0
+- ✅ Supports multiple hash formats (`bcrypt`, `sha512`, `md5`, `argon2`, etc.)
+- ✅ Automatically filters and detects supported hash lines
+- ✅ Modular, clean codebase for easy future enhancements
+- ✅ Graceful error handling and input validation
+- ✅ Stores cracked passwords with full user context in CSV
+
+---
+
+## 📝 Features
+- Extracts and filters supported hashes from a CSV file
+- Utilizes John the Ripper with a custom wordlist
+- Displays cracked results along with associated user info
+- Saves cracked entries to a report file (`cracked_passwords.csv`)
+
+---
+
+## ⚙️ Prerequisites
+- Python 3.8+
+- John the Ripper installed and accessible in your system PATH
+- A structured CSV file with password hashes
+- A password wordlist (e.g., `rockyou.txt`)
+
+---
+
+## 📂 CSV File Format
+Your CSV must include at least the following columns:
+- `username`
+- `password` (can be bcrypt, sha512, md5, etc.)
+- `name` (optional)
+
+Example:
+```csv
+username,password,name
+admin,$2y$10$N9qo8uLOickgx2ZMRZoMy...,John Doe
+root,$6$rounds=5000$abc123...$,Jane Smith
+````
+
+---
+
+## 🚀 How to Use
+
+1. Clone this repository and navigate to the project directory:
+
+   ```bash
+   git clone https://github.com/xtawb/BreachHunter.git
+   cd BreachHunter
+   ```
+
+2. Run the tool:
+
+   ```bash
+   python3 BreachHunter.py
+   ```
+
+3. Enter the requested paths:
+
+   * Path to your CSV file
+   * Path to your wordlist file
+
+<p align="center">
+  <img src="Images/BreachHunter-working.png" alt="🔗 Terminal Output">
+</p>
+
+---
+
+## 📊 Output
+
+* Results are printed in the terminal.
+* A file named `cracked_passwords.csv` will be created in the working directory, containing the cracked credentials and original user info.
+
+---
+
+## ⚠️ Legal Disclaimer
+
+**BreachHunter is for educational and authorized testing purposes only.**
+Unauthorized use to crack real user credentials without permission is illegal and unethical.
+The author is not responsible for misuse of this tool.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+For issues, suggestions, or contributions, please open an issue on the [GitHub repository](https://github.com/xtawb/BreachHunter).
