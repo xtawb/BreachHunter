@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.ibb.co/jZV4phsq/Breach-Hunter.png" alt="BreachHunter Logo" width="150">
+  <img src="BreachHunter-icon.png" alt="BreachHunter Logo" width="150">
 </p>
 
 <h2 align="center">ＢｒｅａｃｈＨｕｎｔｅｒ</h2>
