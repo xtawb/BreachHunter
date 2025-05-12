@@ -58,6 +58,10 @@ user2,$2y$10$ZAMMv.xKtYlLv6sUX.d2P...,Jane Smith
    - Path to your CSV database file
    - Path to your password wordlist file
 
+<p align="center">
+  <img src="BreachHunter-working.png" alt="🔗 Terminal Output-1 Image">
+</p>
+
 ## 📊 Output
 - The tool will display cracked passwords in the console.
 - Results will be saved to `cracked_passwords.csv` in the same directory.
