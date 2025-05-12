@@ -21,7 +21,7 @@ BreachHunter is a flexible password cracking tool powered by John the Ripper. It
 
 ---
 
-## 🆕 New in v2.0.0
+## 🆕 New in v1.0.0
 - ✅ Supports multiple hash formats (`bcrypt`, `sha512`, `md5`, `argon2`, etc.)
 - ✅ Automatically filters and detects supported hash lines
 - ✅ Modular, clean codebase for easy future enhancements
